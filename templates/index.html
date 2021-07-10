@@ -16,6 +16,7 @@
     </h3>
     <br>
 
+
     <h3> Fan is currently {{ fan[1] }},
         {% if fan[0] == 0 %}
             <a href="/fan/off" class="button">Turn Off</a>
@@ -23,6 +24,7 @@
             <a href="/fan/on" class="button">Turn On</a>
         {% endif %}
     </h3>
+    <br>
     <br>
 
     <h3> Main Light 1 is currently {{ m1[1] }},
@@ -32,6 +34,7 @@
             <a href="/m1/on" class="button">Turn On</a>
         {% endif %}
     </h3>
+    <br>
     <h3> Main Light 2 is currently {{ m2[1] }},
         {% if m2[0] == 0 %}
             <a href="/m2/off" class="button">Turn Off</a>
@@ -39,6 +42,7 @@
             <a href="/m2/on" class="button">Turn On</a>
         {% endif %}
     </h3>
+    <br>
 
     <h3> Main Light 3 is currently {{ m3[1] }},
         {% if m3[0] == 0 %}
@@ -47,6 +51,7 @@
             <a href="/m3/on" class="button">Turn On</a>
         {% endif %}
     </h3>
+    <br>
 
     <h3> Main Light 4 is currently {{ m4[1] }},
         {% if m4[0] == 0 %}
@@ -56,6 +61,7 @@
         {% endif %}
     </h3>
     <br>
+    <br>
 
     <h3> Night Lights 1 & 2 are currently {{ n12[1] }},
         {% if n12[0] == 0 %}
@@ -64,6 +70,7 @@
             <a href="/n12/on" class="button">Turn On</a>
         {% endif %}
     </h3>
+    <br>
     <h3> Night Light 3 is currently {{ n3[1] }},
         {% if n3[0] == 0 %}
             <a href="/n3/off" class="button">Turn Off</a>
