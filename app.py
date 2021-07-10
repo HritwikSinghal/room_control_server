@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 
 def get_status():
+    # 0 == ON, 1 == OFF
     fan = GPIO.input(gpio_mappings['fan'][1])
     m1 = GPIO.input(gpio_mappings['m1'][1])
     m2 = GPIO.input(gpio_mappings['m2'][1])
@@ -42,10 +43,10 @@ def action(deviceName, action):
 
     if action == "on":
         room_control.turn_on(actuator)
-        print("ON")
+        print(f"{actuator} ON")
     if action == "off":
         room_control.turn_off(actuator)
-        print("OFF")
+        print(f"{actuator} OFF")
 
     templateData = get_status()
     return render_template('index.html', **templateData)
