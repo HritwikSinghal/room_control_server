@@ -1,8 +1,5 @@
 import RPi.GPIO as GPIO
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-
 from flask import Flask, render_template
 
 from static import room_control
@@ -19,15 +16,6 @@ def get_status():
     m4 = GPIO.input(gpio_mappings['m4'][1])
     n12 = GPIO.input(gpio_mappings['n12'][1])
     n3 = GPIO.input(gpio_mappings['n3'][1])
-
-    # For Debug
-    # fan = (gpio_mappings['fan'][1])
-    # m1 = (gpio_mappings['m1'][1])
-    # m2 = (gpio_mappings['m2'][1])
-    # m3 = (gpio_mappings['m3'][1])
-    # m4 = (gpio_mappings['m4'][1])
-    # n12 = (gpio_mappings['n12'][1])
-    # n3 = (gpio_mappings['n3'][1])
 
     templateData = {
         'fan': fan,
@@ -56,7 +44,7 @@ def action(deviceName, action):
         room_control.turn_on(actuator)
         print("ON")
     if action == "off":
-        room_control.turn_on(actuator)
+        room_control.turn_off(actuator)
         print("OFF")
 
     templateData = get_status()
@@ -64,6 +52,10 @@ def action(deviceName, action):
 
 
 if __name__ == "__main__":
+
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
+
     for k in gpio_mappings:
         GPIO.setup(gpio_mappings[k][1], GPIO.OUT)
 
