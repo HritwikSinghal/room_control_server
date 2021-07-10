@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 
 from static import room_control
 from static.room_control import gpio_mappings
@@ -53,8 +53,9 @@ def action(deviceName, action):
         room_control.turn_off(actuator)
         print(f"{actuator} OFF")
 
-    templateData = get_status()
-    return render_template('index.html', **templateData)
+    # templateData = get_status()
+    # return render_template('index.html', **templateData)
+    return redirect('/')
 
 
 if __name__ == "__main__":
