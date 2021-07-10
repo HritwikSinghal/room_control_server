@@ -1,0 +1,11 @@
+[Unit]
+Description=Room Control Flask Service
+After=network.target
+
+[Service]
+WorkingDirectory=/home/pi/room_control_server
+ExecStart=/usr/bin/python3 /home/pi/room_control_server/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

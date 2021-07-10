@@ -7,6 +7,7 @@ My web server to control Various lights and fans via GPIO pins on RPI.
 Clone this repository using
 
 ```sh
+$ cd ~
 $ git clone https://github.com/HritwikSinghal/room_control_server
 ```
 
@@ -17,7 +18,17 @@ $ cd room_control_server
 $ pip3 install -r requirements.txt
 ```
 
-Run the app using
+
+(Optional) Enable Systemd service to start on network connect
+
+```sh
+$ sudo chmod +x room_control_flask.service
+$ sudo cp room_control_flask.service /etc/systemd/system/
+$ sudo systemclt enable room_control_flask.service
+$ sudo systemclt start room_control_flask.service
+```
+
+Run the app (or don't if it was started in last step)
 
 ```sh
 $ python3 app.py
