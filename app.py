@@ -1,16 +1,9 @@
-from RPi import GPIO
 from flask import Flask, render_template
 
 from static import room_control
 from static.room_control import gpio_mappings
 
 app = Flask(__name__)
-zombie = 40
-stonewolf = 38
-werewolf = 36
-pumpkin = 32
-monstermash = [40, 38, 36, 32]
-relay = monstermash
 
 
 def get_status():
@@ -66,4 +59,9 @@ def action(deviceName, action):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80, debug=True)
+    from RPi import GPIO
+
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
+
+    app.run(host='0.0.0.0', port=8080, debug=True)
