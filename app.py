@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
+from flask import Flask, render_template, redirect, request
 
-from flask import Flask, render_template, redirect
+from werkzeug.useragents import UserAgent
 
 from static import room_control
 from static.room_control import gpio_mappings
@@ -38,6 +39,12 @@ def get_status():
 @app.route("/")
 def index():
     templateData = get_status()
+    user_agent = UserAgent(request.headers.get('User-Agent')).browser
+    print(f'user_agent = {user_agent}')
+
+    if "firefox" not in user_agent or "chrome" in user_agent:
+        return "Some Error Occurred! Please contact Administrator."
+
     return render_template('index.html', **templateData)
 
 
