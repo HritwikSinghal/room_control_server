@@ -38,30 +38,33 @@ def get_status():
 
 @app.route("/")
 def index():
-    templateData = get_status()
     user_agent = UserAgent(request.headers.get('User-Agent')).browser
     print(f'user_agent = {user_agent}')
 
-    if "firefox" not in user_agent or "chrome" in user_agent:
+    if ("firefox" in user_agent or 'safari' in user_agent) and ('chrome' not in user_agent):
+        templateData = get_status()
+        return render_template('index.html', **templateData)
+    else:
         return "Some Error Occurred! Please contact Administrator."
-
-    return render_template('index.html', **templateData)
 
 
 # The function below is executed when someone requests a URL with the actuator name and action in it
 @app.route("/<deviceName>/<action>")
 def action(deviceName, action):
-    actuator = deviceName
+    if deviceName == 'all':
+        if action == 'on':
+            room_control.all_on()
+        if action == 'off':
+            room_control.all_off()
 
-    if action == "on":
-        room_control.turn_on(actuator)
-        print(f"{actuator} ON")
-    if action == "off":
-        room_control.turn_off(actuator)
-        print(f"{actuator} OFF")
+    else:
+        if action == "on":
+            room_control.turn_on(deviceName)
+            print(f"{deviceName} ON")
+        if action == "off":
+            room_control.turn_off(deviceName)
+            print(f"{deviceName} OFF")
 
-    # templateData = get_status()
-    # return render_template('index.html', **templateData)
     return redirect('/')
 
 

@@ -10,14 +10,10 @@
 <div style="text-align: center;">
     <body>
 
-    <h3> TEST: TURN OFF ALL BUTTON {{ m1[1] }},
-        {% if m1[0] == 0 %}
-            <a href="/m1/off" class="button">Turn Off</a>
-        {% else %}
-            <a href="/m1/on" class="button">Turn On</a>
-        {% endif %}
+    <h3>
+        <a href="/all/on" class="button">Main Lights and Fan On</a>
+        <a href="/all/off" class="button">Main Lights and Fan Off</a>
     </h3>
-
     <br>
 
     <h3> Fan is currently {{ fan[1] }},
@@ -27,8 +23,8 @@
             <a href="/fan/on" class="button">Turn On</a>
         {% endif %}
     </h3>
-
     <br>
+
     <h3> Main Light 1 is currently {{ m1[1] }},
         {% if m1[0] == 0 %}
             <a href="/m1/off" class="button">Turn Off</a>
@@ -59,8 +55,8 @@
             <a href="/m4/on" class="button">Turn On</a>
         {% endif %}
     </h3>
-
     <br>
+
     <h3> Night Lights 1 & 2 are currently {{ n12[1] }},
         {% if n12[0] == 0 %}
             <a href="/n12/off" class="button">Turn Off</a>
@@ -75,8 +71,8 @@
             <a href="/n3/on" class="button">Turn On</a>
         {% endif %}
     </h3>
+    <br>
+    <br>
 
-    <br>
-    <br>
 </div> </body>
 </html>
