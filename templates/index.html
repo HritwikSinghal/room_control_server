@@ -10,18 +10,18 @@
 <div style="text-align: center;">
     <body>
 
-    <br>
-
-    <h3> TEST: TURN OFF ALL {{ 0 }},
-        {% if m1 == 0 %}
+    <h3> TEST: TURN OFF ALL BUTTON {{ m1[1] }},
+        {% if m1[0] == 0 %}
             <a href="/m1/off" class="button">Turn Off</a>
         {% else %}
             <a href="/m1/on" class="button">Turn On</a>
         {% endif %}
     </h3>
 
-    <h3> Fan is currently {{ fan }},
-        {% if f == 0 %}
+    <br>
+
+    <h3> Fan is currently {{ fan[1] }},
+        {% if fan[0] == 0 %}
             <a href="/fan/off" class="button">Turn Off</a>
         {% else %}
             <a href="/fan/on" class="button">Turn On</a>
@@ -29,31 +29,31 @@
     </h3>
 
     <br>
-    <h3> Main Light 1 is currently {{ m1 }},
-        {% if m1 == 0 %}
+    <h3> Main Light 1 is currently {{ m1[1] }},
+        {% if m1[0] == 0 %}
             <a href="/m1/off" class="button">Turn Off</a>
         {% else %}
             <a href="/m1/on" class="button">Turn On</a>
         {% endif %}
     </h3>
-    <h3> Main Light 2 is currently {{ m2 }},
-        {% if m2 == 0 %}
+    <h3> Main Light 2 is currently {{ m2[1] }},
+        {% if m2[0] == 0 %}
             <a href="/m2/off" class="button">Turn Off</a>
         {% else %}
             <a href="/m2/on" class="button">Turn On</a>
         {% endif %}
     </h3>
 
-    <h3> Main Light 3 is currently {{ m3 }},
-        {% if m3 == 0 %}
+    <h3> Main Light 3 is currently {{ m3[1] }},
+        {% if m3[0] == 0 %}
             <a href="/m3/off" class="button">Turn Off</a>
         {% else %}
             <a href="/m3/on" class="button">Turn On</a>
         {% endif %}
     </h3>
 
-    <h3> Main Light 4 is currently {{ m4 }},
-        {% if m4 == 0 %}
+    <h3> Main Light 4 is currently {{ m4[1] }},
+        {% if m4[0] == 0 %}
             <a href="/m4/off" class="button">Turn Off</a>
         {% else %}
             <a href="/m4/on" class="button">Turn On</a>
@@ -61,15 +61,15 @@
     </h3>
 
     <br>
-    <h3> Night Lights 1 & 2 are currently {{ n12 }},
-        {% if n12 == 0 %}
+    <h3> Night Lights 1 & 2 are currently {{ n12[1] }},
+        {% if n12[0] == 0 %}
             <a href="/n12/off" class="button">Turn Off</a>
         {% else %}
             <a href="/n12/on" class="button">Turn On</a>
         {% endif %}
     </h3>
-    <h3> Night Light 3 is currently {{ n3 }},
-        {% if n3 == 0 %}
+    <h3> Night Light 3 is currently {{ n3[1] }},
+        {% if n3[0] == 0 %}
             <a href="/n3/off" class="button">Turn Off</a>
         {% else %}
             <a href="/n3/on" class="button">Turn On</a>

@@ -7,6 +7,11 @@ from static.room_control import gpio_mappings
 
 app = Flask(__name__)
 
+input_mapping = {
+    0: "On",
+    1: "Off"
+}
+
 
 def get_status():
     # 0 == ON, 1 == OFF
@@ -19,13 +24,13 @@ def get_status():
     n3 = GPIO.input(gpio_mappings['n3'][1])
 
     templateData = {
-        'fan': fan,
-        'm1': m1,
-        'm2': m2,
-        'm3': m3,
-        'm4': m4,
-        'n12': n12,
-        'n3': n3
+        'fan': [fan, input_mapping[fan]],
+        'm1': [m1, input_mapping[m1]],
+        'm2': [m2, input_mapping[m2]],
+        'm3': [m3, input_mapping[m3]],
+        'm4': [m4, input_mapping[m4]],
+        'n12': [n12, input_mapping[n12]],
+        'n3': [n3, input_mapping[n3]]
     }
     return templateData
 
