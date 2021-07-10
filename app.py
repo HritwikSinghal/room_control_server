@@ -1,3 +1,8 @@
+import RPi.GPIO as GPIO
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+
 from flask import Flask, render_template
 
 from static import room_control
@@ -45,7 +50,7 @@ def index():
 # The function below is executed when someone requests a URL with the actuator name and action in it
 @app.route("/<deviceName>/<action>")
 def action(deviceName, action):
-    actuator = gpio_mappings[deviceName][1]
+    actuator = deviceName
 
     if action == "on":
         room_control.turn_on(actuator)
@@ -59,9 +64,7 @@ def action(deviceName, action):
 
 
 if __name__ == "__main__":
-    from RPi import GPIO
-
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setwarnings(False)
+    for k in gpio_mappings:
+        GPIO.setup(gpio_mappings[k][1], GPIO.OUT)
 
     app.run(host='0.0.0.0', port=8080, debug=True)

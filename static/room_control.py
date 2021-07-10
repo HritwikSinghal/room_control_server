@@ -1,5 +1,15 @@
+import RPi.GPIO as GPIO
+
 import argparse
 import traceback
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+
+general_mapping = {
+    "OFF": GPIO.HIGH,
+    "ON": GPIO.LOW,
+}
 
 gpio_mappings = {
     'm1': ['Main Light 1', 2],
@@ -135,15 +145,5 @@ def room_control():
 
 
 if __name__ == "__main__":
-    from RPi import GPIO
-
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setwarnings(False)
-
-    general_mapping = {
-        "OFF": GPIO.HIGH,
-        "ON": GPIO.LOW,
-    }
-
     room_control()
     # todo: add timer functionality and ability to switch on and off at specific time
