@@ -1,7 +1,7 @@
 import threading
 import time
 import traceback
-from server.static import room_control
+import room_control
 
 import RPi.GPIO as GPIO
 
@@ -14,27 +14,15 @@ general_mapping = {
 }
 
 gpio_mappings = {
-    'ml1': 2,
-    'ml2': 3,
-    'ml3': 4,
-    'ml4': 14,
-
-    'nl12': 15,
-    'nl3': 18,
-
-    'fan': 17,
-    'extra': 27,
-
-    'ir_in': 11,
-    'ir_out': 21,
-
+    'ir_in': ['ir_in', 10],
+    'ir_out': ['ir_out', 21],
 }
 
 
 def ir_in_control():
     global in_ir_updated, room_in_ir_time
 
-    in_pin = gpio_mappings['ir_in']
+    in_pin = gpio_mappings['ir_in'][1]
     GPIO.setup(in_pin, GPIO.IN)
 
     while True:
@@ -48,7 +36,7 @@ def ir_in_control():
 
 def ir_out_control():
     global room_out_ir_time, out_ir_updated
-    out_pin = gpio_mappings['ir_out']
+    out_pin = gpio_mappings['ir_out'][1]
     GPIO.setup(out_pin, GPIO.IN)
 
     while True:
