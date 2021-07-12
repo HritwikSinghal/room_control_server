@@ -22,10 +22,6 @@ gpio_mappings = {
 
     'fan': ['Fan', 17],
     'extra': ['Extra', 27],
-
-    'ir_in': ['ir_in', 11],
-    'ir_out': ['ir_out', 26],
-
 }
 
 
