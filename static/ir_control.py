@@ -1,3 +1,5 @@
+import signal
+import sys
 import threading
 import time
 import traceback
@@ -127,10 +129,11 @@ if __name__ == "__main__":
                 in_ir_updated = 0
                 out_ir_updated = 0
                 print("New Try except block")
+                signal.signal(signal.SIGINT, exit(0))
                 continue
 
     except:
         print("There was some error in threading! \n")
         traceback.print_exc()
-        exit(0)
+        sys.exit(0)
         # GPIO.cleanup()
