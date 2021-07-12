@@ -58,11 +58,11 @@ def ir_out_control():
 
 def control_t(total_person: int):
     global in_ir_updated, out_ir_updated, room_in_ir_time, room_out_ir_time
+
     while True:
         try:
             if in_ir_updated == 1 and out_ir_updated == 0:
-                print("# person moving out and is between in and out sensor")
-                # person moving out and is between in and out sensor
+                print("----------person moving out and is between in and out sensor----------")
                 threading.Event().wait(1)
 
                 if out_ir_updated == 0:
@@ -90,8 +90,7 @@ def control_t(total_person: int):
                     print("some error in Moving out code, error code : 1")
 
             elif out_ir_updated == 1 and in_ir_updated == 0:
-                print("# person coming in and in between out and in sensor")
-                # person coming in and in between out and in sensor
+                print("----------person coming in and in between out and in sensor----------")
                 threading.Event().wait(1)
 
                 if in_ir_updated == 0:
@@ -113,7 +112,14 @@ def control_t(total_person: int):
                     total_person = min(15, total_person + 1)
                     print("Someone came in room, Beware!")
                     print("Total person", total_person, end='\n\n')
+                else:
+                    print("some error in Moving in code, error code : 2")
+
+            elif out_ir_updated == 0 and in_ir_updated == 0:
+                continue
+                
             else:
+                print(f"-------- out_ir_updated = {out_ir_updated} & in_ir_updated = {in_ir_updated} --------")
                 out_ir_updated = 0
                 in_ir_updated = 0
 
