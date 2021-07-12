@@ -56,29 +56,8 @@ def ir_out_control():
             threading.Event().wait(0.5)
 
 
-def control(person=0):
-    print(f"Initial Persons in room = {person}")
-    global room_in_ir_time
-    global room_out_ir_time
-    global in_ir_updated
-    global out_ir_updated
-
-    total_person = person
-    room_in_ir_time = -1
-    room_out_ir_time = -1
-
-    in_ir_updated = 0
-    out_ir_updated = 0
-
-    # creating thread
-    t1 = threading.Thread(target=ir_in_control)
-    t2 = threading.Thread(target=ir_out_control)
-
-    # starting thread 1
-    t1.start()
-    # starting thread 2
-    t2.start()
-
+def control_t(total_person: int):
+    global in_ir_updated, out_ir_updated, room_in_ir_time, room_out_ir_time
     while True:
         try:
             if in_ir_updated == 1 and out_ir_updated == 0:
@@ -145,6 +124,33 @@ def control(person=0):
             print("New Try except block")
             continue
 
+
+def start(person=0):
+    print(f"Initial Persons in room = {person}")
+
+    global room_in_ir_time, room_out_ir_time, in_ir_updated, out_ir_updated
+
+    total_person = person
+    room_in_ir_time = -1
+    room_out_ir_time = -1
+
+    in_ir_updated = 0
+    out_ir_updated = 0
+
+    # creating thread
+    t1 = threading.Thread(target=ir_in_control)
+    t2 = threading.Thread(target=ir_out_control)
+    t3 = threading.Thread(target=control_t, args=(total_person,))
+
+    # starting thread 1
+    t1.start()
+    # starting thread 2
+    t2.start()
+    # starting thread 3
+    t3.start()
+
+    t3.join()
+
     print("\n\n"
           "---------------------THREAD KILLED---------------------"
           "\n\n")
@@ -160,6 +166,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.person:
-        control(args.person[0])
+        start(args.person[0])
     else:
-        control()
+        start()
