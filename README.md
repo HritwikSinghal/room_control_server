@@ -31,7 +31,7 @@ $ sudo systemclt start room_control_flask.service
 Run the app (or don't if it was started in last step)
 
 ```sh
-$ python3 app.py
+$ python3 __init__.py
 ```
 
 ## License
