@@ -28,7 +28,7 @@
     <br>
 
     {# Fan button #}
-    <h2> Fan :
+    <h3> Fan :
         {% if fan[0] == 0 %}
             <input onclick="javascript:window.location.href='/fan/on'; return false;" type="radio"
                    class="btn-check" name="fan-options-outlined" id="fan-success-outlined" autocomplete="off"
@@ -50,12 +50,12 @@
             <label class="btn btn-outline-danger" for="fan-danger-outlined">Off</label>
             {#            <a href="/fan/on" class="button">Turn On</a>#}
         {% endif %}
-    </h2>
+    </h3>
     <br>
 
 
     {# Main lights buttons #}
-    <h4> Main Light 1 :
+    <h3> Light 1 :
         {% if m1[0] == 0 %}
             <input onclick="javascript:window.location.href='/m1/on'; return false;" type="radio"
                    class="btn-check" name="m1-options-outlined" id="m1-success-outlined" autocomplete="off"
@@ -78,54 +78,97 @@
             <label class="btn btn-outline-danger" for="m1-danger-outlined">Off</label>
             {#            <a href="/m1/on" class="button">Turn On</a>#}
         {% endif %}
-    </h4>
+    </h3>
 
     <br>
-    <h4> Main Light 2 :
+    <h3> Light 2 :
         {% if m2[0] == 0 %}
-            <a href="/m2/off" class="button">Turn Off</a>
+            <input onclick="javascript:window.location.href='/m2/on'; return false;" type="radio"
+                   class="btn-check" name="m2-options-outlined" id="m2-success-outlined" autocomplete="off"
+                   checked>
+            <label class="btn btn-outline-success" for="m2-success-outlined">On</label>
+
+            <input onclick="javascript:window.location.href='/m2/off'; return false;" type="radio"
+                   class="btn-check" name="m2-options-outlined" id="m2-danger-outlined" autocomplete="off">
+            <label class="btn btn-outline-danger" for="m2-danger-outlined">Off</label>
+
+            {#            <a href="/m2/off" class="button">Turn Off</a>#}
         {% else %}
-            <a href="/m2/on" class="button">Turn On</a>
+            <input onclick="javascript:window.location.href='/m2/on'; return false;" type="radio"
+                   class="btn-check" name="m2-options-outlined" id="m2-success-outlined" autocomplete="off">
+            <label class="btn btn-outline-success" for="m2-success-outlined">On</label>
+
+            <input onclick="javascript:window.location.href='/m2/off'; return false;" type="radio"
+                   class="btn-check" name="m2-options-outlined" id="m2-danger-outlined" autocomplete="off"
+                   checked>
+            <label class="btn btn-outline-danger" for="m2-danger-outlined">Off</label>
+            {#            <a href="/m2/on" class="button">Turn On</a>#}
         {% endif %}
-    </h4>
+    </h3>
     <br>
 
-    <h4> Main Light 3 :
+    <h3> Light 3 :
         {% if m3[0] == 0 %}
-            <a href="/m3/off" class="button">Turn Off</a>
+            <input onclick="javascript:window.location.href='/m3/on'; return false;" type="radio"
+                   class="btn-check" name="m3-options-outlined" id="m3-success-outlined" autocomplete="off"
+                   checked>
+            <label class="btn btn-outline-success" for="m3-success-outlined">On</label>
+
+            <input onclick="javascript:window.location.href='/m3/off'; return false;" type="radio"
+                   class="btn-check" name="m3-options-outlined" id="m3-danger-outlined" autocomplete="off">
+            <label class="btn btn-outline-danger" for="m3-danger-outlined">Off</label>
+
+            {#            <a href="/m3/off" class="button">Turn Off</a>#}
         {% else %}
-            <a href="/m3/on" class="button">Turn On</a>
+            <input onclick="javascript:window.location.href='/m3/on'; return false;" type="radio"
+                   class="btn-check" name="m3-options-outlined" id="m3-success-outlined" autocomplete="off">
+            <label class="btn btn-outline-success" for="m3-success-outlined">On</label>
+
+            <input onclick="javascript:window.location.href='/m3/off'; return false;" type="radio"
+                   class="btn-check" name="m3-options-outlined" id="m3-danger-outlined" autocomplete="off"
+                   checked>
+            <label class="btn btn-outline-danger" for="m3-danger-outlined">Off</label>
+            {#            <a href="/m3/on" class="button">Turn On</a>#}
         {% endif %}
-    </h4>
+    </h3>
     <br>
 
-    <h4> Main Light 4 :
+    <h3> Light 4 :
         {% if m4[0] == 0 %}
-            <a href="/m4/off" class="button">Turn Off</a>
+            <input onclick="javascript:window.location.href='/m4/on'; return false;" type="radio"
+                   class="btn-check" name="m3-options-outlined" id="m4-success-outlined" autocomplete="off"
+                   checked>
+            <label class="btn btn-outline-success" for="m4-success-outlined">On</label>
+
+            <input onclick="javascript:window.location.href='/m4/off'; return false;" type="radio"
+                   class="btn-check" name="m4-options-outlined" id="m4-danger-outlined" autocomplete="off">
+            <label class="btn btn-outline-danger" for="m4-danger-outlined">Off</label>
+
+            {#            <a href="/m4/off" class="button">Turn Off</a>#}
         {% else %}
-            <a href="/m4/on" class="button">Turn On</a>
+            {#            <a href="/m4/on" class="button">Turn On</a>#}
         {% endif %}
-    </h4>
+    </h3>
     <br>
     <br>
 
 
     {# Night lights buttons #}
-    <h4> Night Lights 1 & 2 :
+    <h3> Night Lights 1 & 2 :
         {% if n12[0] == 0 %}
-            <a href="/n12/off" class="button">Turn Off</a>
+            {#            <a href="/n12/off" class="button">Turn Off</a>#}
         {% else %}
-            <a href="/n12/on" class="button">Turn On</a>
+            {#            <a href="/n12/on" class="button">Turn On</a>#}
         {% endif %}
-    </h4>
+    </h3>
     <br>
-    <h4> Night Light 3 :
+    <h3> Night Light 3 :
         {% if n3[0] == 0 %}
-            <a href="/n3/off" class="button">Turn Off</a>
+            {#            <a href="/n3/off" class="button">Turn Off</a>#}
         {% else %}
-            <a href="/n3/on" class="button">Turn On</a>
+            {#            <a href="/n3/on" class="button">Turn On</a>#}
         {% endif %}
-    </h4>
+    </h3>
 
     {# END #}
 
