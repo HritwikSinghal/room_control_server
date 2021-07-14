@@ -11,23 +11,30 @@
 
 
 {% block body %}
-    <h3>
-        <a href="/all/on" class="button">Main Lights and Fan On</a>
-        <a href="/all/off" class="button">Main Lights and Fan Off</a>
-    </h3>
+
+    {# ALL Main lights & Fan buttons #}
+    <h2>
+        <a href="/all/on" class="btn btn-primary" role="button">Main Lights and Fan On</a>
+        {#        <a href="/all/on" class="button">Main Lights and Fan On</a>#}
+
+        <a href="/all/off" class="btn btn-danger" role="button">Main Lights and Fan Off</a>
+        {#        <a href="/all/off" class="button">Main Lights and Fan Off</a>#}
+    </h2>
     <br>
 
 
-    <h3> Fan is currently {{ fan[1] }},
+    {# Fan button #}
+    <h2> Fan is currently {{ fan[1] }},
         {% if fan[0] == 0 %}
             <a href="/fan/off" class="button">Turn Off</a>
         {% else %}
             <a href="/fan/on" class="button">Turn On</a>
         {% endif %}
-    </h3>
+    </h2>
     <br>
     <br>
 
+    {# Main lights buttons #}
     <h3> Main Light 1 is currently {{ m1[1] }},
         {% if m1[0] == 0 %}
             <a href="/m1/off" class="button">Turn Off</a>
@@ -64,6 +71,8 @@
     <br>
     <br>
 
+
+    {# Night lights buttons #}
     <h3> Night Lights 1 & 2 are currently {{ n12[1] }},
         {% if n12[0] == 0 %}
             <a href="/n12/off" class="button">Turn Off</a>
@@ -79,6 +88,9 @@
             <a href="/n3/on" class="button">Turn On</a>
         {% endif %}
     </h3>
+
+    {# END #}
+
     <br>
     <br>
 
