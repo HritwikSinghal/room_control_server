@@ -12,7 +12,7 @@
 
 {% block body %}
 
-    {#  change 'id' and 'for' field  #}
+    {#  change 'id' and 'for' field and add onclick="javascript:window.location.href='/fan/on'; return false;"  #}
     {#    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off">#}
     {#    <label class="btn btn-outline-success" for="success-outlined">On</label>#}
     {##}
@@ -31,38 +31,52 @@
     <h2> Fan :
         {% if fan[0] == 0 %}
             <input onclick="javascript:window.location.href='/fan/on'; return false;" type="radio"
-                   class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off"
+                   class="btn-check" name="fan-options-outlined" id="fan-success-outlined" autocomplete="off"
                    checked>
-            <label class="btn btn-outline-success" for="success-outlined">On</label>
+            <label class="btn btn-outline-success" for="fan-success-outlined">On</label>
 
             <input onclick="javascript:window.location.href='/fan/off'; return false;" type="radio"
-                   class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
-            <label class="btn btn-outline-danger" for="danger-outlined">Off</label>
-
+                   class="btn-check" name="fan-options-outlined" id="fan-danger-outlined" autocomplete="off">
+            <label class="btn btn-outline-danger" for="fan-danger-outlined">Off</label>
             {#            <a href="/fan/off" class="button">Turn Off</a>#}
         {% else %}
-
             <input onclick="javascript:window.location.href='/fan/on'; return false;" type="radio"
-                   class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off">
-            <label class="btn btn-outline-success" for="success-outlined">On</label>
+                   class="btn-check" name="fan-options-outlined" id="fan-success-outlined" autocomplete="off">
+            <label class="btn btn-outline-success" for="fan-success-outlined">On</label>
 
             <input onclick="javascript:window.location.href='/fan/off'; return false;" type="radio"
-                   class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off"
+                   class="btn-check" name="fan-options-outlined" id="fan-danger-outlined" autocomplete="off"
                    checked>
-            <label class="btn btn-outline-danger" for="danger-outlined">Off</label>
+            <label class="btn btn-outline-danger" for="fan-danger-outlined">Off</label>
             {#            <a href="/fan/on" class="button">Turn On</a>#}
         {% endif %}
     </h2>
-    <br>
     <br>
 
 
     {# Main lights buttons #}
     <h4> Main Light 1 :
         {% if m1[0] == 0 %}
-            <a href="/m1/off" class="button">Turn Off</a>
+            <input onclick="javascript:window.location.href='/m1/on'; return false;" type="radio"
+                   class="btn-check" name="m1-options-outlined" id="m1-success-outlined" autocomplete="off"
+                   checked>
+            <label class="btn btn-outline-success" for="m1-success-outlined">On</label>
+
+            <input onclick="javascript:window.location.href='/m1/off'; return false;" type="radio"
+                   class="btn-check" name="m1-options-outlined" id="m1-danger-outlined" autocomplete="off">
+            <label class="btn btn-outline-danger" for="m1-danger-outlined">Off</label>
+
+            {#            <a href="/m1/off" class="button">Turn Off</a>#}
         {% else %}
-            <a href="/m1/on" class="button">Turn On</a>
+            <input onclick="javascript:window.location.href='/m1/on'; return false;" type="radio"
+                   class="btn-check" name="m1-options-outlined" id="m1-success-outlined" autocomplete="off">
+            <label class="btn btn-outline-success" for="m1-success-outlined">On</label>
+
+            <input onclick="javascript:window.location.href='/m1/off'; return false;" type="radio"
+                   class="btn-check" name="m1-options-outlined" id="m1-danger-outlined" autocomplete="off"
+                   checked>
+            <label class="btn btn-outline-danger" for="m1-danger-outlined">Off</label>
+            {#            <a href="/m1/on" class="button">Turn On</a>#}
         {% endif %}
     </h4>
 
