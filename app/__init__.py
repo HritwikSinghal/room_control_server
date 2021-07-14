@@ -52,22 +52,15 @@ def get_status():
             'n3': [n3, input_mapping[n3]]
         }
     else:
-        fan = gpio_mappings['fan'][1]
-        m1 = gpio_mappings['m1'][1]
-        m2 = gpio_mappings['m2'][1]
-        m3 = gpio_mappings['m3'][1]
-        m4 = gpio_mappings['m4'][1]
-        n12 = gpio_mappings['n12'][1]
-        n3 = gpio_mappings['n3'][1]
 
         templateData = {
-            'fan': [fan, 'OFF'],
-            'm1': [m1, 'OFF'],
-            'm2': [m2, 'OFF'],
-            'm3': [m3, 'OFF'],
-            'm4': [m4, 'OFF'],
-            'n12': [n12, 'OFF'],
-            'n3': [n3, 'OFF']
+            'fan': [0, 'Off'],
+            'm1': [1, 'Off'],
+            'm2': [0, 'Off'],
+            'm3': [1, 'Off'],
+            'm4': [0, 'Off'],
+            'n12': [1, 'Off'],
+            'n3': [0, 'Off']
         }
 
     return templateData

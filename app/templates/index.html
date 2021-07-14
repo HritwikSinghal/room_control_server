@@ -2,7 +2,7 @@
 
 {% block head %}
     <link rel="stylesheet" href="../static/css/style.css">
-    <div style="text-align: center;"><h1><br>Room Controller!</h1></div>
+    <div style="text-align: center;"><h2><br>Room Controller!</h2></div>
     <br>
     <div style="text-align: center;"><img src="../static/images/halloween.jpg" alt "RoomControl-logo" width="400"
         height="350">
@@ -12,82 +12,108 @@
 
 {% block body %}
 
-    {# ALL Main lights & Fan buttons #}
-    <h2>
-        <a href="/all/on" class="btn btn-primary" role="button">Main Lights and Fan On</a>
-        {#        <a href="/all/on" class="button">Main Lights and Fan On</a>#}
+    {#  change 'id' and 'for' field  #}
+    {#    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off">#}
+    {#    <label class="btn btn-outline-success" for="success-outlined">On</label>#}
+    {##}
+    {#    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">#}
+    {#    <label class="btn btn-outline-danger" for="danger-outlined">Off</label>#}
+    {#    #}
 
-        <a href="/all/off" class="btn btn-danger" role="button">Main Lights and Fan Off</a>
-        {#        <a href="/all/off" class="button">Main Lights and Fan Off</a>#}
-    </h2>
+    {# ALL Main lights & Fan buttons #}
+    <a href="/all/on" class="btn btn-primary btn-lg active" role="button">Main Lights and Fan On</a>
+    <a href="/all/off" class="btn btn-danger btn-lg" role="button">Main Lights and Fan Off</a>
+
+    <br>
     <br>
 
-
     {# Fan button #}
-    <h2> Fan is currently {{ fan[1] }},
-        {% if fan[0] == 0 %}
-            <a href="/fan/off" class="button">Turn Off</a>
+    <h2> Fan :
+        {% if fan[0] == 1 %}
+            <a href="/fan/on">
+                <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off"
+                       checked>
+                <label class="btn btn-outline-success" for="success-outlined">On</label>
+            </a>
+
+            <a href="/fan/off">
+                <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+                <label class="btn btn-outline-danger" for="danger-outlined">Off</label>
+            </a>
+            {#            <a href="/fan/off" class="button">Turn Off</a>#}
         {% else %}
-            <a href="/fan/on" class="button">Turn On</a>
+            <a href="/fan/on">
+                <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off">
+                <label class="btn btn-outline-success" for="success-outlined">On</label>
+            </a>
+
+            <a href="/fan/off">
+                <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off"
+                       checked>
+                <label class="btn btn-outline-danger" for="danger-outlined">Off</label>
+            </a>
+            {#            <a href="/fan/on" class="button">Turn On</a>#}
         {% endif %}
     </h2>
     <br>
     <br>
 
+
     {# Main lights buttons #}
-    <h3> Main Light 1 is currently {{ m1[1] }},
+    <h4> Main Light 1 :
         {% if m1[0] == 0 %}
             <a href="/m1/off" class="button">Turn Off</a>
         {% else %}
             <a href="/m1/on" class="button">Turn On</a>
         {% endif %}
-    </h3>
+    </h4>
+
     <br>
-    <h3> Main Light 2 is currently {{ m2[1] }},
+    <h4> Main Light 2 :
         {% if m2[0] == 0 %}
             <a href="/m2/off" class="button">Turn Off</a>
         {% else %}
             <a href="/m2/on" class="button">Turn On</a>
         {% endif %}
-    </h3>
+    </h4>
     <br>
 
-    <h3> Main Light 3 is currently {{ m3[1] }},
+    <h4> Main Light 3 :
         {% if m3[0] == 0 %}
             <a href="/m3/off" class="button">Turn Off</a>
         {% else %}
             <a href="/m3/on" class="button">Turn On</a>
         {% endif %}
-    </h3>
+    </h4>
     <br>
 
-    <h3> Main Light 4 is currently {{ m4[1] }},
+    <h4> Main Light 4 :
         {% if m4[0] == 0 %}
             <a href="/m4/off" class="button">Turn Off</a>
         {% else %}
             <a href="/m4/on" class="button">Turn On</a>
         {% endif %}
-    </h3>
+    </h4>
     <br>
     <br>
 
 
     {# Night lights buttons #}
-    <h3> Night Lights 1 & 2 are currently {{ n12[1] }},
+    <h4> Night Lights 1 & 2 :
         {% if n12[0] == 0 %}
             <a href="/n12/off" class="button">Turn Off</a>
         {% else %}
             <a href="/n12/on" class="button">Turn On</a>
         {% endif %}
-    </h3>
+    </h4>
     <br>
-    <h3> Night Light 3 is currently {{ n3[1] }},
+    <h4> Night Light 3 :
         {% if n3[0] == 0 %}
             <a href="/n3/off" class="button">Turn Off</a>
         {% else %}
             <a href="/n3/on" class="button">Turn On</a>
         {% endif %}
-    </h3>
+    </h4>
 
     {# END #}
 
