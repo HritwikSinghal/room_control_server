@@ -2,7 +2,21 @@
 
 My web server to control Various lights and fans via GPIO pins on RPI.
 
-## Usage
+## Install
+
+### Method 1 (Automatic)
+
+```sh
+$ curl -sSL https://raw.githubusercontent.com/HritwikSinghal/room_control_server/master/install.sh | bash
+```
+
+The server will start automatically on Network connect. You can check the status of server by below command.
+
+```
+$ sudo systemctl status room_control_flask.service
+```
+
+### Method 2 (Manual)
 
 Clone this repository using
 
@@ -17,7 +31,6 @@ Enter the directory and install all the requirements using
 $ cd room_control_server
 $ pip3 install -r requirements.txt
 ```
-
 
 (Optional) Enable Systemd service to start on network connect
 
@@ -38,5 +51,5 @@ $ python3 __init__.py
 
 [GPLv3](/LICENSE)
 
-Thanks to [RPi-Flask-WebServer](https://github.com/Mjrovai/RPi-Flask-WebServer) and 
+Thanks to [RPi-Flask-WebServer](https://github.com/Mjrovai/RPi-Flask-WebServer) and
 [NetworkChuck](https://github.com/theNetworkChuck/NetworkChuck) for providing base code.  

@@ -3,8 +3,8 @@ Description=Room Control Flask Service
 After=network.target
 
 [Service]
-WorkingDirectory=%h/room_control_server
-ExecStart=/usr/bin/python3 %h/room_control_server/app.py
+WorkingDirectory=/usr/local/sbin/room_control_server
+ExecStart=/usr/bin/python3 /usr/local/sbin/room_control_server/run.py
 Restart=always
 
 [Install]
