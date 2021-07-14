@@ -4,8 +4,8 @@ DEBUG = int(os.getenv("MY_DEBUG"))
 
 if not DEBUG:
     import RPi.GPIO as GPIO
-    from static import room_control
-    from static.room_control import gpio_mappings
+    from app.static import room_control
+    from app.static.room_control import gpio_mappings
 else:
     gpio_mappings = {
         'm1': ['Main Light 1', 2],

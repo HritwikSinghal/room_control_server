@@ -24,8 +24,8 @@ $ pip3 install -r requirements.txt
 ```sh
 $ sudo chmod +x room_control_flask.service
 $ sudo cp room_control_flask.service /etc/systemd/system/
-$ sudo systemclt enable room_control_flask.service
-$ sudo systemclt start room_control_flask.service
+$ sudo systemctl enable room_control_flask.service
+$ sudo systemctl start room_control_flask.service
 ```
 
 Run the app (or don't if it was started in last step)
