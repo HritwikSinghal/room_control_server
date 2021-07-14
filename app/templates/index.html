@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<head>
-    <title>Room Control</title>
+{% extends "base.html" %}
+
+{% block title %} Room Control {% endblock %}
+
+{% block head %}
     <link rel="stylesheet" href="../static/css/style.css">
     <div style="text-align: center;"><h1><br>Room Controller!</h1></div>
     <br>
-    <div style="text-align: center;"><img src="../static/images/halloween.jpg" alt "RoomControl-logo" width="400" height="350">
+    <div style="text-align: center;"><img src="../static/images/halloween.jpg" alt "RoomControl-logo" width="400"
+        height="350">
     </div>
-</head>
-<div style="text-align: center;">
-    <body>
+{% endblock %}
 
+
+{% block body %}
     <h3>
         <a href="/all/on" class="button">Main Lights and Fan On</a>
         <a href="/all/off" class="button">Main Lights and Fan Off</a>
@@ -81,5 +84,4 @@
     <br>
     <br>
 
-</div> </body>
-</html>
+{% endblock %}

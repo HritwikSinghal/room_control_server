@@ -1,9 +1,17 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <title>Room Control</title>
+    <title>{% block title %} {% endblock %}</title>
+    {% block head %}
 
+    {% endblock %}
 </head>
-<body>
+<div style="text-align: center;">
+    <body>
+    {% block body %}
 
-</body>
+    {% endblock %}
+    </body>
+</div>
+
 </html>
