@@ -98,6 +98,19 @@ def action(deviceName, action):
     return redirect('/')
 
 
+@app.route('/old')
+def old_int():
+    user_agent = UserAgent(request.headers.get('User-Agent')).browser
+    print(f'user_agent = {user_agent}')
+
+    if ("firefox" in user_agent or 'safari' in user_agent) and ('chrome' not in user_agent):
+        templateData = get_status()
+        return render_template('old_int.html', **templateData)
+
+    else:
+        return "Some Error Occurred! Please contact Administrator."
+
+
 def start():
     if not DEBUG:
         GPIO.setmode(GPIO.BCM)
