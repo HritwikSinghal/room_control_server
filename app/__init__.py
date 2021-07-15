@@ -98,6 +98,25 @@ def action(deviceName, action):
     return redirect('/')
 
 
+@app.route("/<old_deviceName>/<old_action>/old")
+def old_action(old_deviceName, old_action):
+    if old_deviceName == 'all':
+        if old_action == 'on':
+            room_control.all_on()
+        if old_action == 'off':
+            room_control.all_off()
+
+    else:
+        if old_action == "on":
+            room_control.turn_on(old_deviceName)
+            print(f"{old_deviceName} ON")
+        if old_action == "off":
+            room_control.turn_off(old_deviceName)
+            print(f"{old_deviceName} OFF")
+
+    return redirect('/old')
+
+
 @app.route('/old')
 def old_int():
     user_agent = UserAgent(request.headers.get('User-Agent')).browser
