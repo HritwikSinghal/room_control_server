@@ -133,10 +133,11 @@
     </h3>
     <br>
 
+
     <h3> Light 4 :
         {% if m4[0] == 0 %}
             <input onclick="javascript:window.location.href='/m4/on'; return false;" type="radio"
-                   class="btn-check" name="m3-options-outlined" id="m4-success-outlined" autocomplete="off"
+                   class="btn-check" name="m4-options-outlined" id="m4-success-outlined" autocomplete="off"
                    checked>
             <label class="btn btn-outline-success" for="m4-success-outlined">On</label>
 
@@ -146,6 +147,14 @@
 
             {#            <a href="/m4/off" class="button">Turn Off</a>#}
         {% else %}
+            <input onclick="javascript:window.location.href='/m4/on'; return false;" type="radio"
+                   class="btn-check" name="m4-options-outlined" id="m4-success-outlined" autocomplete="off">
+            <label class="btn btn-outline-success" for="m4-success-outlined">On</label>
+
+            <input onclick="javascript:window.location.href='/m4/off'; return false;" type="radio"
+                   class="btn-check" name="m4-options-outlined" id="m4-danger-outlined" autocomplete="off"
+                   checked>
+            <label class="btn btn-outline-danger" for="m4-danger-outlined">Off</label>
             {#            <a href="/m4/on" class="button">Turn On</a>#}
         {% endif %}
     </h3>
