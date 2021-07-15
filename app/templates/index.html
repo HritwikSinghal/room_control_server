@@ -165,16 +165,50 @@
     {# Night lights buttons #}
     <h3> Night Lights 1 & 2 :
         {% if n12[0] == 0 %}
+            <input onclick="javascript:window.location.href='/n12/on'; return false;" type="radio"
+                   class="btn-check" name="n12-options-outlined" id="n12-success-outlined" autocomplete="off"
+                   checked>
+            <label class="btn btn-outline-success" for="n12-success-outlined">On</label>
+
+            <input onclick="javascript:window.location.href='/n12/off'; return false;" type="radio"
+                   class="btn-check" name="n12-options-outlined" id="n12-danger-outlined" autocomplete="off">
+            <label class="btn btn-outline-danger" for="n12-danger-outlined">Off</label>
+
             {#            <a href="/n12/off" class="button">Turn Off</a>#}
         {% else %}
+            <input onclick="javascript:window.location.href='/n12/on'; return false;" type="radio"
+                   class="btn-check" name="n12-options-outlined" id="n12-success-outlined" autocomplete="off">
+            <label class="btn btn-outline-success" for="n12-success-outlined">On</label>
+
+            <input onclick="javascript:window.location.href='/n12/off'; return false;" type="radio"
+                   class="btn-check" name="n12-options-outlined" id="n12-danger-outlined" autocomplete="off"
+                   checked>
+            <label class="btn btn-outline-danger" for="n12-danger-outlined">Off</label>
             {#            <a href="/n12/on" class="button">Turn On</a>#}
         {% endif %}
     </h3>
     <br>
     <h3> Night Light 3 :
         {% if n3[0] == 0 %}
+            <input onclick="javascript:window.location.href='/n3/on'; return false;" type="radio"
+                   class="btn-check" name="n3-options-outlined" id="n3-success-outlined" autocomplete="off"
+                   checked>
+            <label class="btn btn-outline-success" for="n3-success-outlined">On</label>
+
+            <input onclick="javascript:window.location.href='/n3/off'; return false;" type="radio"
+                   class="btn-check" name="n3-options-outlined" id="n3-danger-outlined" autocomplete="off">
+            <label class="btn btn-outline-danger" for="n3-danger-outlined">Off</label>
+
             {#            <a href="/n3/off" class="button">Turn Off</a>#}
         {% else %}
+            <input onclick="javascript:window.location.href='/n3/on'; return false;" type="radio"
+                   class="btn-check" name="n3-options-outlined" id="n3-success-outlined" autocomplete="off">
+            <label class="btn btn-outline-success" for="n3-success-outlined">On</label>
+
+            <input onclick="javascript:window.location.href='/n3/off'; return false;" type="radio"
+                   class="btn-check" name="n3-options-outlined" id="n3-danger-outlined" autocomplete="off"
+                   checked>
+            <label class="btn btn-outline-danger" for="n3-danger-outlined">Off</label>
             {#            <a href="/n3/on" class="button">Turn On</a>#}
         {% endif %}
     </h3>
