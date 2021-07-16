@@ -17,7 +17,7 @@ else:
         'n3': ['Night Light 3', 18],
 
         'fan': ['Fan', 17],
-        'extra': ['Extra', 27],
+        # 'extra': ['Extra', 27],
     }
 
 from flask import Flask, render_template, redirect, request
