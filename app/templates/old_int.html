@@ -3,6 +3,7 @@
     <title>Room Control</title>
     <link rel="stylesheet" href="../static/css/style.css/">
     <div style="text-align: center;"><h1><br>Room Controller!</h1></div>
+    <link rel="icon" type="image/png" href="../static/images/fav.png">
     <br>
     <div style="text-align: center;"><img src="../static/images/halloween.jpg" alt "RoomControl-logo" width="400"
         height="350">
@@ -12,77 +13,70 @@
     <body>
 
     <h3>
-        <a href="/all/on/old" class="button" style="background-color:#4CAF50">Main Lights and Fan On</a>
-        <a href="/all/off/old" class="button" style="background-color:#f14e4e">Main Lights and Fan Off</a>
+        <a href="/all/on/old" class="button" style="background-color:#0062cc">Lights and Fan On</a>
+        <a href="/all/off/old" class="button" style="background-color:#dc3545">Lights and Fan Off</a>
     </h3>
     <br>
 
-
-    <h3> Fan is currently {{ fan[1] }},
+    <h4> Fan is {{ fan[1] }},
         {% if fan[0] == 0 %}
-            <a href="/fan/off/old" class="button" style="background-color:#FF5252">Turn Off</a>
+            <a href="/fan/off/old" class="button" style="background-color:#dc3545">Turn Off</a>
         {% else %}
-            <a href="/fan/on/old" class="button" style="background-color:#4CAF50">Turn On</a>
+            <a href="/fan/on/old" class="button" style="background-color:#198754">Turn On</a>
         {% endif %}
-    </h3>
-    <br>
-    <br>
+    </h4>
 
-    <h3> Main Light 1 is currently {{ m1[1] }},
+    <h4> Light 1 is {{ m1[1] }},
         {% if m1[0] == 0 %}
-            <a href="/m1/off/old" class="button" style="background-color:#FF5252">Turn Off</a>
+            <a href="/m1/off/old" class="button" style="background-color:#dc3545">Turn Off</a>
         {% else %}
-            <a href="/m1/on/old" class="button" style="background-color:#4CAF50">Turn On</a>
+            <a href="/m1/on/old" class="button" style="background-color:#198754">Turn On</a>
         {% endif %}
-    </h3>
-    <br>
-    <h3> Main Light 2 is currently {{ m2[1] }},
+    </h4>
+
+    <h4> Light 2 is {{ m2[1] }},
         {% if m2[0] == 0 %}
-            <a href="/m2/off/old" class="button" style="background-color:#FF5252">Turn Off</a>
+            <a href="/m2/off/old" class="button" style="background-color:#dc3545">Turn Off</a>
         {% else %}
-            <a href="/m2/on/old" class="button" style="background-color:#4CAF50">Turn On</a>
+            <a href="/m2/on/old" class="button" style="background-color:#198754">Turn On</a>
         {% endif %}
-    </h3>
-    <br>
+    </h4>
 
-    <h3> Main Light 3 is currently {{ m3[1] }},
+    <h4> Light 3 is {{ m3[1] }},
         {% if m3[0] == 0 %}
-            <a href="/m3/off/old" class="button" style="background-color:#FF5252">Turn Off</a>
+            <a href="/m3/off/old" class="button" style="background-color:#dc3545">Turn Off</a>
         {% else %}
-            <a href="/m3/on/old" class="button" style="background-color:#4CAF50">Turn On</a>
+            <a href="/m3/on/old" class="button" style="background-color:#198754">Turn On</a>
         {% endif %}
-    </h3>
-    <br>
+    </h4>
 
-    <h3> Main Light 4 is currently {{ m4[1] }},
+    <h4> Light 4 is {{ m4[1] }},
         {% if m4[0] == 0 %}
-            <a href="/m4/off/old" class="button" style="background-color:#FF5252">Turn Off</a>
+            <a href="/m4/off/old" class="button" style="background-color:#dc3545">Turn Off</a>
         {% else %}
-            <a href="/m4/on/old" class="button" style="background-color:#4CAF50">Turn On</a>
+            <a href="/m4/on/old" class="button" style="background-color:#198754">Turn On</a>
         {% endif %}
-    </h3>
-    <br>
+    </h4>
     <br>
 
-    <h3> Night Lights 1 & 2 are currently {{ n12[1] }},
+    <h4> Night Lights 1 & 2 are {{ n12[1] }},
         {% if n12[0] == 0 %}
-            <a href="/n12/off/old" class="button" style="background-color:#FF5252">Turn Off</a>
+            <a href="/n12/off/old" class="button" style="background-color:#dc3545">Turn Off</a>
         {% else %}
-            <a href="/n12/on/old" class="button" style="background-color:#4CAF50">Turn On</a>
+            <a href="/n12/on/old" class="button" style="background-color:#198754">Turn On</a>
         {% endif %}
-    </h3>
-    <br>
-    <h3> Night Light 3 is currently {{ n3[1] }},
+    </h4>
+
+    <h4> Night Light 3 is {{ n3[1] }},
         {% if n3[0] == 0 %}
-            <a href="/n3/off/old" class="button" style="background-color:#FF5252">Turn Off</a>
+            <a href="/n3/off/old" class="button" style="background-color:#dc3545">Turn Off</a>
         {% else %}
-            <a href="/n3/on/old" class="button" style="background-color:#4CAF50">Turn On</a>
+            <a href="/n3/on/old" class="button" style="background-color:#198754">Turn On</a>
         {% endif %}
-    </h3>
-    <br>
+    </h4>
     <br>
 
-    <a href="/" class="button" role="button">New Interface</a>
+    <a href="/" class="button" role="button" style="color:#acacac">New Interface</a>
     <br>
     <br>
 

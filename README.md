@@ -2,6 +2,16 @@
 
 My web server to control Various lights and fans via GPIO pins on RPI.
 
+---
+
+## Screenshots
+
+|  New Interface (Default)  | Old Interface |
+| --- | ----------- |
+| ![Default Interface](image/default_interface.png) | ![Old Interface](image/old_interface.png) |
+
+---
+
 ## Install
 
 ### Method 1 (Automatic)
@@ -46,6 +56,8 @@ Run the app (or don't if it was started in last step)
 ```sh
 $ python3 __init__.py
 ```
+
+---
 
 ## License
 
