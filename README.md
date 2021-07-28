@@ -54,7 +54,7 @@ $ sudo systemctl start room_control_flask.service
 Run the app (or don't if it was started in last step)
 
 ```sh
-$ python3 __init__.py
+$ python3 run.py
 ```
 
 ---
@@ -62,6 +62,9 @@ $ python3 __init__.py
 ## License
 
 [GPLv3](/LICENSE)
+
+---
+For GPIO connections and how to connect the relay, you can visit [this website](https://lastminuteengineers.com/two-channel-relay-module-arduino-tutorial/).  [Here](https://web.archive.org/web/20210728191456/https://lastminuteengineers.com/two-channel-relay-module-arduino-tutorial/) is archived version of above page from wayback.
 
 Thanks to [RPi-Flask-WebServer](https://github.com/Mjrovai/RPi-Flask-WebServer) and
 [NetworkChuck](https://github.com/theNetworkChuck/NetworkChuck) for providing base code.  
