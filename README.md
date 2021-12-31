@@ -48,6 +48,7 @@ $ pip3 install -r requirements.txt
 $ sudo chmod +x room_control_flask.service
 $ mkdir -p ~/.config/systemd/user/
 $ cp room_control_flask.service ~/.config/systemd/user/
+$ sudo loginctl enable-linger $USER
 $ systemctl enable --now --user room_control_flask.service
 ```
 
