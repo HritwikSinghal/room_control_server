@@ -17,3 +17,6 @@ DEBUG = int(os.getenv("MY_DEBUG"))
 import app
 
 app.start()
+
+# todo: make gpio mapping dynamic by storing them in separate file
+# todo: add hardware circuit instructions to README

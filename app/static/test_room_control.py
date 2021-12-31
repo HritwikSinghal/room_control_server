@@ -12,6 +12,7 @@ general_mapping = {
     "ON": GPIO.LOW,
 }
 
+# make these dynamic
 gpio_mappings = {
     'ml1': 2,
     'ml2': 3,

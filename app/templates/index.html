@@ -28,7 +28,7 @@
 
     {# Fan button #}
     <h3> Fan :
-        {% if fan[0] == 0 %}
+        {% if fan[0] == 1 %}
             <input onclick="javascript:window.location.href='/fan/on'; return false;" type="radio"
                    class="btn-check" name="fan-options-outlined" id="fan-success-outlined" autocomplete="off"
                    checked>
@@ -55,7 +55,7 @@
 
     {# Main lights buttons #}
     <h3> Light 1 :
-        {% if m1[0] == 0 %}
+        {% if m1[0] == 1 %}
             <input onclick="javascript:window.location.href='/m1/on'; return false;" type="radio"
                    class="btn-check" name="m1-options-outlined" id="m1-success-outlined" autocomplete="off"
                    checked>
@@ -81,7 +81,7 @@
 
     <br>
     <h3> Light 2 :
-        {% if m2[0] == 0 %}
+        {% if m2[0] == 1 %}
             <input onclick="javascript:window.location.href='/m2/on'; return false;" type="radio"
                    class="btn-check" name="m2-options-outlined" id="m2-success-outlined" autocomplete="off"
                    checked>
@@ -107,7 +107,7 @@
     <br>
 
     <h3> Light 3 :
-        {% if m3[0] == 0 %}
+        {% if m3[0] == 1 %}
             <input onclick="javascript:window.location.href='/m3/on'; return false;" type="radio"
                    class="btn-check" name="m3-options-outlined" id="m3-success-outlined" autocomplete="off"
                    checked>
@@ -134,7 +134,7 @@
 
 
     <h3> Light 4 :
-        {% if m4[0] == 0 %}
+        {% if m4[0] == 1 %}
             <input onclick="javascript:window.location.href='/m4/on'; return false;" type="radio"
                    class="btn-check" name="m4-options-outlined" id="m4-success-outlined" autocomplete="off"
                    checked>
@@ -163,7 +163,7 @@
 
     {# Night lights buttons #}
     <h3> Night Lights 1 & 2 :
-        {% if n12[0] == 0 %}
+        {% if n12[0] == 1 %}
             <input onclick="javascript:window.location.href='/n12/on'; return false;" type="radio"
                    class="btn-check" name="n12-options-outlined" id="n12-success-outlined" autocomplete="off"
                    checked>
@@ -188,7 +188,7 @@
     </h3>
     <br>
     <h3> Night Light 3 :
-        {% if n3[0] == 0 %}
+        {% if n3[0] == 1 %}
             <input onclick="javascript:window.location.href='/n3/on'; return false;" type="radio"
                    class="btn-check" name="n3-options-outlined" id="n3-success-outlined" autocomplete="off"
                    checked>

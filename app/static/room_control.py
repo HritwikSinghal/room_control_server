@@ -7,8 +7,8 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 
 general_mapping = {
-    "OFF": GPIO.HIGH,
-    "ON": GPIO.LOW,
+    "ON": GPIO.HIGH,
+    "OFF": GPIO.LOW,
 }
 
 gpio_mappings = {
@@ -100,6 +100,7 @@ def person_one():
 
 
 def room_control():
+    # todo: migrate it to click
     parser = argparse.ArgumentParser(description='Room Control')
     parser.add_argument('-f', '--fan', type=str, choices=['0', '1'],
                         help="0 : fan off, 1 : fan on")

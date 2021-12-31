@@ -25,34 +25,34 @@ from werkzeug.useragents import UserAgent
 
 app = Flask(__name__)
 
+# these are only for old method where it gets current status via these
 input_mapping = {
-    0: "On",
-    1: "Off"
+    1: "On",
+    0: "Off"
 }
 
 
 def get_status():
     if not DEBUG:
-        # if fan is : 0 == ON, 1 == OFF
-        fan = GPIO.input(gpio_mappings['fan'][1])
-        m1 = GPIO.input(gpio_mappings['m1'][1])
-        m2 = GPIO.input(gpio_mappings['m2'][1])
-        m3 = GPIO.input(gpio_mappings['m3'][1])
-        m4 = GPIO.input(gpio_mappings['m4'][1])
-        n12 = GPIO.input(gpio_mappings['n12'][1])
-        n3 = GPIO.input(gpio_mappings['n3'][1])
+        # if fan is : 1 == ON, 0 == OFF. Reverse mapping for Failsafe mode
+        fan_state = GPIO.input(gpio_mappings['fan'][1])
+        m1_state = GPIO.input(gpio_mappings['m1'][1])
+        m2_state = GPIO.input(gpio_mappings['m2'][1])
+        m3_state = GPIO.input(gpio_mappings['m3'][1])
+        m4_state = GPIO.input(gpio_mappings['m4'][1])
+        n12_state = GPIO.input(gpio_mappings['n12'][1])
+        n3_state = GPIO.input(gpio_mappings['n3'][1])
 
         templateData = {
-            'fan': [fan, input_mapping[fan]],
-            'm1': [m1, input_mapping[m1]],
-            'm2': [m2, input_mapping[m2]],
-            'm3': [m3, input_mapping[m3]],
-            'm4': [m4, input_mapping[m4]],
-            'n12': [n12, input_mapping[n12]],
-            'n3': [n3, input_mapping[n3]]
+            'fan': [fan_state, input_mapping[fan_state]],
+            'm1': [m1_state, input_mapping[m1_state]],
+            'm2': [m2_state, input_mapping[m2_state]],
+            'm3': [m3_state, input_mapping[m3_state]],
+            'm4': [m4_state, input_mapping[m4_state]],
+            'n12': [n12_state, input_mapping[n12_state]],
+            'n3': [n3_state, input_mapping[n3_state]]
         }
     else:
-
         templateData = {
             'fan': [0, 'Off'],
             'm1': [1, 'Off'],
