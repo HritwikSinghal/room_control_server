@@ -1,6 +1,7 @@
 import argparse
 import os
 
+# todo: migrate it to click
 parser = argparse.ArgumentParser(description='Debug flag')
 parser.add_argument('-d', '--my_debug', type=int, choices=[0, 1], help="0 : Debug off, 1 : Debug on", required=False)
 
