@@ -1,6 +1,6 @@
-# Flask Server for Raspberry Pi Room Control
+# Flask Server for Home automation using Raspberry Pi
 
-My web server to control Various lights and fans via GPIO pins on RPI.
+A simple FLASK WebServer to control things in your home using Raspberry Pi's GPIOs programmed as outputs (acting as actuators).
 
 ---
 
