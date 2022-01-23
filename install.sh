@@ -49,16 +49,16 @@ pip3 install -r ./requirements.txt
 printf "\n ${grn} Enabling Systemd service ${end} "
 sudo chmod +x room_control_flask.service
 
-if [ -e ~/.config/systemd/user/room_control_flask.service ]; then
-  sudo systemctl stop --user room_control_flask.service
-  sudo systemctl disable --user room_control_flask.service
-  sudo rm ~/.config/systemd/user/room_control_flask.service
+if [ -e /etc/systemd/system/room_control_flask.service ]; then
+  sudo systemctl stop room_control_flask.service
+  sudo systemctl disable room_control_flask.service
+  sudo rm /etc/systemd/system/room_control_flask.service
   echo "Removed old service"
 fi
 
-mkdir -p ~/.config/systemd/user/
-cp room_control_flask.service ~/.config/systemd/user/
-systemctl enable --now --user room_control_flask.service
+sudo cp room_control_flask.service /etc/systemd/system/
+sudo systemctl enable room_control_flask.service
+sudo systemctl start room_control_flask.service
 
 sudo ln -sf /usr/local/sbin/room_control_server/app/static/room_control.py ~
 

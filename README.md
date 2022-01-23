@@ -23,7 +23,7 @@ $ curl -sSL https://raw.githubusercontent.com/HritwikSinghal/room_control_server
 The server will start automatically on Network connect. You can check the status of server by below command.
 
 ```
-$ systemctl status --user room_control_flask.service
+$ sudo systemctl status room_control_flask.service
 ```
 
 ### Method 2 (Manual)
@@ -32,23 +32,23 @@ Clone this repository using
 
 ```sh
 $ cd ~
-$ git clone -b master --depth 1 https://github.com/HritwikSinghal/room_control_server /usr/local/sbin/room_control_server/
+$ git clone https://github.com/HritwikSinghal/room_control_server
 ```
 
 Enter the directory and install all the requirements using
 
 ```sh
-$ cd /usr/local/sbin/room_control_server/
+$ cd room_control_server
 $ pip3 install -r requirements.txt
 ```
 
-(Optional, but Recommended) Enable Systemd service to start on network connect
+(Optional) Enable Systemd service to start on network connect
 
 ```sh
 $ sudo chmod +x room_control_flask.service
-$ mkdir -p ~/.config/systemd/user/
-$ cp room_control_flask.service ~/.config/systemd/user/
-$ systemctl enable --now --user room_control_flask.service
+$ sudo cp room_control_flask.service /etc/systemd/system/
+$ sudo systemctl enable room_control_flask.service
+$ sudo systemctl start room_control_flask.service
 ```
 
 Run the app (or don't if it was started in last step)
