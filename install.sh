@@ -39,7 +39,7 @@ echo -e "
 
 printf "\n ${grn} Cloning Repo ${end} "
 sudo rm -rf /usr/local/sbin/room_control_server/
-sudo git clone --depth 1 -b master https://github.com/HritwikSinghal/room_control_server /usr/local/sbin/room_control_server/
+sudo git clone --depth 1 -b system_install https://github.com/HritwikSinghal/room_control_server /usr/local/sbin/room_control_server/
 cd /usr/local/sbin/room_control_server/ || exit
 sudo rm -rf .git/
 
