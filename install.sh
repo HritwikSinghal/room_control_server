@@ -44,7 +44,7 @@ cd /usr/local/sbin/room_control_server/ || exit
 sudo rm -rf .git/
 
 printf "\n ${grn} Installing Requirements ${end} "
-pip3 install -r ./requirements.txt
+sudo pip3 install -r ./requirements.txt
 
 printf "\n ${grn} Enabling Systemd service ${end} "
 sudo chmod +x room_control_flask.service
