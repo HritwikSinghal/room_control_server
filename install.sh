@@ -58,7 +58,6 @@ fi
 
 mkdir -p ~/.config/systemd/user/
 cp room_control_flask.service ~/.config/systemd/user/
-sudo loginctl enable-linger $USER
 systemctl enable --now --user room_control_flask.service
 
 sudo ln -sf /usr/local/sbin/room_control_server/app/static/room_control.py ~
