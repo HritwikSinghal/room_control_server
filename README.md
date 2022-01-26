@@ -21,7 +21,7 @@ A simple FLASK WebServer to control things in your home using Raspberry Pi's GPI
 ### Method 1 (Automatic)
 
 ```sh
-$ curl -sSL https://raw.githubusercontent.com/HritwikSinghal/room_control_server/master/install.sh | bash
+$ curl -sSL https://raw.githubusercontent.com/HritwikSinghal/room_control_server/system_install/install.sh | sudo bash
 ```
 
 The server will start automatically on Network connect. You can check the status of server by below command.
@@ -36,14 +36,14 @@ Clone this repository using
 
 ```sh
 $ cd ~
-$ git clone https://github.com/HritwikSinghal/room_control_server
+$ sudo git clone --depth 1 -b system_install https://github.com/HritwikSinghal/room_control_server /usr/local/sbin/room_control_server/
 ```
 
 Enter the directory and install all the requirements using
 
 ```sh
-$ cd room_control_server
-$ pip3 install -r requirements.txt
+$ cd /usr/local/sbin/room_control_server/
+$ sudo pip3 install -r ./requirements.txt
 ```
 
 (Optional) Enable Systemd service to start on network connect
@@ -53,6 +53,7 @@ $ sudo chmod +x room_control_flask.service
 $ sudo cp room_control_flask.service /etc/systemd/system/
 $ sudo systemctl enable room_control_flask.service
 $ sudo systemctl start room_control_flask.service
+$ sudo ln -sf /usr/local/sbin/room_control_server/app/static/room_control.py ~
 ```
 
 Run the app (or don't if it was started in last step)
