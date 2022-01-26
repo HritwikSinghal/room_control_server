@@ -14,6 +14,10 @@ A simple FLASK WebServer to control things in your home using Raspberry Pi's GPI
 
 ## Install
 
+### prerequisites
+
+- Install Git, python3-pip, curl
+
 ### Method 1 (Automatic)
 
 ```sh
